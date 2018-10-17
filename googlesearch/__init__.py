@@ -301,7 +301,7 @@ def search(query, tld='com', lang='en', tbs='0', safe='off', num=10, start=0,
         default.
 
     @rtype:  generator
-    @return: Generator (iterator) that yields found URLs. If the C{stop}
+    @return: Generator (iterator) that yields a tuple of found URLs and titles. If the C{stop}
         parameter is C{None} the iterator will loop forever.
     """
     # Set of hashes for the results found.
@@ -394,7 +394,7 @@ def search(query, tld='com', lang='en', tbs='0', safe='off', num=10, start=0,
             hashes.add(h)
 
             # Yield the result.
-            yield link, title
+            yield (title,link)
 
             count += 1
             if stop and count >= stop:
