@@ -378,6 +378,7 @@ def search(query, tld='com', lang='en', tbs='0', safe='off', num=10, start=0,
             # Get the URL from the anchor tag.
             try:
                 link = a['href']
+                print(a)
                 title = a.text
             except KeyError:
                 continue
